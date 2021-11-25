@@ -1,0 +1,15 @@
+At a particular point the intermediate UAT branches for specific tenant 
+would give conflicts while merging with UAT
+
+We can have common files in separate/segregated branch.
+
+Incase of scenario3 conflicts can still occur while merging PR from different intermediate branches into UAT2.0.0
+
+Is it feasible to go for tenant specific UAT deployments?
+
+For production deployment as per scenario3 we can 
+ 1)merge UAT intermediate tenant branch into release
+
+
+What if we have the to work on further new feature so new branch will be created from UAT2.0.0?
+
