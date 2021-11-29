@@ -1,38 +1,45 @@
 Queries !!!
-1. What if we have to work on a further new feature so a new branch will be created from UAT2.0.0?
 
-2. Is it feasible to go for tenant-specific UAT deployments?
-
-3. Is it feasible to go for tenant-specific repositories? 
+1. Is it feasible to go for tenant-specific UAT deployments? 
 
 
 Suggestions !!!
 
-1. At a particular point the intermediate UAT branches for a specific tenant would give conflicts while merging with UAT.
+1. At a particular point, the intermediate UAT branches for a specific tenant would give conflicts while merging with UAT.
+ - Sometimes multiple developers may try to edit the same content. If Developer A tries to edit code that Developer B is editing a conflict may occur. 
+ - In this particular scenario merge conflicts may occur as we'll be merging our tenant-specific intermediate uat branches in to the UAT branch.
 
 2. We can have common files in separate/segregated branches.
 
 3. In the case of scenario3 conflicts can still occur while merging PR from different intermediate branches into UAT2.0.0
 
-4. It is suggested to have tenant-specific repositories?
+4. It is suggested to have tenant-specific repositories.
 
-5. For production deployment as per scenario 3, we can merge UAT intermediate tenant branch into the release
- 
+5. For production deployment as per scenario 3, we can merge UAT intermediate tenant branch into the release branch.
+
+6. Keep track of the merge conflicts.
+   - We can have one file(ex. Readme.MD) that'll have a list of common files(configs, code, etc.) shared between tenants. 
+
 Best Practices !!!
+
 1. Break down large issues into smaller issues.
-   Breaking a large issue into smaller issues makes the work more manageable and enables team members to work in parallel. It also leads to smaller pull requests, which are easier to review.
-   To track how smaller issues fit into the larger goal, use task lists, milestones, or labels. For more information, see "About task lists", "About milestones", and "Managing labels."
+   - This makes the work more manageable and enables team members to work in parallel. It also leads to smaller pull requests, which are easier to review.
+   
 
 2. Define code owners for faster code reviews.
-   Use Code Owners feature to define which teams and people are automatically selected as reviewers for the repository.
+   - Use the Code Owners feature to define which teams and people are automatically selected as reviewers for the repository.
 
 3. Don’t commit dependencies into source control
-   Pushing dependencies into your remote origin will increase repository size.
+   - Pushing dependencies into your remote origin will increase repository size.
    
 4. Use a branch naming convention
-   Use proper naming convention while naming tenant specific branches.
+   - Use proper naming convention while naming tenant-specific branches.
    
 5. Keep branches up to date.
-   The best practice here is to ensure that you’re consistently merging your base branch into your current branch as you work, especially if it’s a long-outstanding branch.
+   - The best practice here is to ensure that you’re consistently merging your base branch into your current branch as you work, especially if it’s a long-outstanding branch.
 
-6. Delete stale branches
+6. Delete stale branches.
+   - Every time one branch is merged into another, the branch that is merged in becomes stale, assuming further work isn’t being done in it.
+   
+Important Links.
+https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
