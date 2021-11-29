@@ -1,0 +1,31 @@
+At a particular point the intermediate UAT branches for a specific tenant 
+would give conflicts while merging with UAT.
+
+We can have common files in separate/segregated branches.
+
+In the case of scenario3 conflicts can still occur while merging PR from different intermediate branches into UAT2.0.0
+
+Is it feasible to go for tenant-specific UAT deployments?
+
+For production deployment as per scenario 3, we can 
+ 1)merge UAT intermediate tenant branch into the release
+
+
+What if we have to work on a further new feature so a new branch will be created from UAT2.0.0?
+
+
+Best Practices !!!
+1. Break down large issues into smaller issues
+Breaking a large issue into smaller issues makes the work more manageable and enables team members to work in parallel. It also leads to smaller pull requests, which are easier to review.
+
+To track how smaller issues fit into the larger goal, use task lists, milestones, or labels. For more information, see "About task lists", "About milestones", and "Managing labels."
+
+2. Define code owners for faster code reviews.
+Use Code Owners feature to define which teams and people are automatically selected as reviewers for the repository.
+
+3. Don’t commit dependencies into source control
+
+4. Delete stale branches
+
+5. Keep branches up to date
+
